@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Scene Slider with Range Bar</title>
+  </head>
+  <body>
+    <section>
+      <div id="background1"></div>
+      <div id="background2"></div>
+      <div class="image">
+        <div class="image-inside">
+          <div id="background--phone"></div>
+          <div id="background--phone2"></div>
+        </div>
+      </div>
+
+      <input
+        type="range"
+        name=""
+        value="0"
+        min="0"
+        max="100"
+        class="range"
+        onmousemove="rangeSlider(this.value)"
+      />
+    </section>
+
+    <!-- Script -->
+    <script>
+      function rangeSlider(value) {
+        document.getElementById('background1').style.width = +value + '%';
+        document.getElementById('background2').style.width =
+          'calc(100% - ' + value + '%)';
+        document.getElementById('background--phone').style.width = +value + '%';
+        document.getElementById('background--phone2').style.width =
+          'calc(100% - ' + value + '%)';
+      }
+    </script>
+  </body>
+</html>
